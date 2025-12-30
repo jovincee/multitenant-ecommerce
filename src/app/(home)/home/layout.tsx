@@ -1,6 +1,7 @@
 import React from "react"
 import styles from "./Layout.module.css"
 import Navbar from "./navbar";
+// import Navbar from "./components_pure_css/navbar";
 
 interface Props {
     children: React.ReactNode;
