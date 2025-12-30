@@ -1,0 +1,27 @@
+/*Layout Wrapper */
+.layout{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.navbar {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: #ef4444; /* Tailwind red-500 equivalent */
+    color: #ffffff;         /* Font color */
+}
+
+
+/* Navbar text */
+.brand{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Main content area */
+.content {
+    flex: 1;
+    padding: 1rem;
+}
