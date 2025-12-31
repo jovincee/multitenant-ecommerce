@@ -111,6 +111,8 @@
   background-color: #ffffff;
 
   transition: box-shadow 0.2s ease, transform 0.2s ease;
+  overflow: hidden;           /* prevents image from spilling out */
+  border-radius: 12px;
 }
 
 /* Hover effect (desktop only) */
@@ -130,6 +132,13 @@
 .product-card img {
   border-radius: 6px;
   object-fit: cover;
+   width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.08);
 }
 
 /* Product title */
