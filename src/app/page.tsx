@@ -2,12 +2,28 @@
 import Link from "next/link";
 import Navbar from "./(home)/home/components_pure_css/navbar";
 import ProductCard from "@/components/ProductCard";
+import CategoriesNav from "@/components/CategoriesNav";
 import { featuredProducts } from "@/data/products";
-import { categories } from "@/data/categories";
-
+import { getProductsByCategory } from "@/lib/products";
 import "./home.css"
 
-export default function Home() {
+import { Product } from "@/types/product";
+
+export default async function Home({ searchParams }: {
+  searchParams: Promise<{ category?: string }>
+
+}) {
+  let products;
+  const { category } = await searchParams;
+  if (category === "all"){
+    products = featuredProducts
+  }
+  else {
+    products = getProductsByCategory(category)
+  }
+
+
+
   return (
     <>
       <header>
@@ -26,7 +42,7 @@ export default function Home() {
 
         {/** Categories Navbar section */}
         {/* Categories */}
-        <nav className="categories" aria-label="Product categories">
+        {/* <nav className="categories" aria-label="Product categories">
           <ul className="category-list">
           {categories.map(category => (
             <li className="category-button"key={category.id}>
@@ -38,7 +54,8 @@ export default function Home() {
 
           }
           </ul>
-        </nav>
+        </nav> */}
+        <CategoriesNav/>
 
         
         
@@ -47,7 +64,7 @@ export default function Home() {
           <h2 id="featured-products">Featured Products</h2>
 
           <ul className="product-grid">
-            {featuredProducts.map(product => (
+            {products.map(product => (
               <li key={product.id}>
                 <ProductCard product={product} />
               </li>

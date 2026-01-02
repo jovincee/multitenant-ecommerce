@@ -1,3 +1,15 @@
+export type ProductCategory =
+  | "cpu"
+  | "gpu"
+  | "motherboard"
+  | "ram"
+  | "storage"
+  | "psu"
+  | "case"
+  | "monitor"
+  | "prebuilt";
+
+
 export interface Product {
     id: string
     name: string
@@ -5,5 +17,5 @@ export interface Product {
     image: string
     slug: string
     inStock: boolean
-
+    category: ProductCategory
 }

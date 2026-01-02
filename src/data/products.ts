@@ -9,6 +9,7 @@ export const featuredProducts: Product[] = [
     image: "/products/ryzen-5900x.jpg",
     slug: "amd-ryzen-9-5900x",
     inStock: true,
+    category: "cpu"
   },
   {
     id: "2",
@@ -17,6 +18,7 @@ export const featuredProducts: Product[] = [
     image: "/products/ryzen-5800x.jpg",
     slug: "amd-ryzen-7-5800x",
     inStock: true,
+    category: "cpu"
   },
   {
     id: "3",
@@ -25,6 +27,7 @@ export const featuredProducts: Product[] = [
     image: "/products/intel-i9-13900k.jpg",
     slug: "intel-core-i9-13900k",
     inStock: true,
+    category: "cpu"
   },
   {
     id: "4",
@@ -33,6 +36,7 @@ export const featuredProducts: Product[] = [
     image: "/products/intel-i7-13700k.jpg",
     slug: "intel-core-i7-13700k",
     inStock: false,
+    category: "cpu"
   },
   {
     id: "5",
@@ -41,6 +45,7 @@ export const featuredProducts: Product[] = [
     image: "/products/rtx-3080.jpg",
     slug: "nvidia-rtx-3080",
     inStock: true,
+    category: "gpu"
   },
   {
     id: "6",
@@ -49,6 +54,7 @@ export const featuredProducts: Product[] = [
     image: "/products/rtx-4070-ti.jpg",
     slug: "nvidia-rtx-4070-ti",
     inStock: true,
+    category: "gpu"
   },
   {
     id: "7",
@@ -57,6 +63,7 @@ export const featuredProducts: Product[] = [
     image: "/products/rx-7900-xt.jpg",
     slug: "amd-radeon-rx-7900-xt",
     inStock: true,
+    category: "gpu"
   },
   {
     id: "8",
@@ -65,6 +72,7 @@ export const featuredProducts: Product[] = [
     image: "/products/asus-b550.jpg",
     slug: "asus-rog-b550",
     inStock: true,
+    category: "motherboard"
   },
   {
     id: "9",
@@ -73,6 +81,7 @@ export const featuredProducts: Product[] = [
     image: "/products/msi-z790.jpg",
     slug: "msi-z790",
     inStock: true,
+    category: "motherboard"
   },
   {
     id: "10",
@@ -81,6 +90,7 @@ export const featuredProducts: Product[] = [
     image: "/products/corsair-32gb-ram.jpg",
     slug: "corsair-vengeance-32gb-ddr4",
     inStock: true,
+    category: "ram"
   },
   {
     id: "11",
@@ -89,6 +99,7 @@ export const featuredProducts: Product[] = [
     image: "/products/gskill-ddr5.jpg",
     slug: "gskill-trident-z-16gb-ddr5",
     inStock: true,
+    category: "ram"
   },
   {
     id: "12",
@@ -97,6 +108,7 @@ export const featuredProducts: Product[] = [
     image: "/products/samsung-980-pro.jpg",
     slug: "samsung-980-pro-1tb",
     inStock: true,
+    category: "storage"
   },
   {
     id: "13",
@@ -105,6 +117,7 @@ export const featuredProducts: Product[] = [
     image: "/products/wd-sn850x.jpg",
     slug: "wd-black-sn850x-2tb",
     inStock: false,
+    category: "storage"
   },
   {
     id: "14",
@@ -113,6 +126,7 @@ export const featuredProducts: Product[] = [
     image: "/products/seagate-4tb.jpg",
     slug: "seagate-barracuda-4tb",
     inStock: true,
+    category: "storage"
   },
   {
     id: "15",
@@ -121,6 +135,7 @@ export const featuredProducts: Product[] = [
     image: "/products/corsair-rm850x.jpg",
     slug: "corsair-rm850x-850w",
     inStock: true,
+    category: "psu"
   },
   {
     id: "16",
@@ -129,6 +144,7 @@ export const featuredProducts: Product[] = [
     image: "/products/nzxt-h510.jpg",
     slug: "nzxt-h510-case",
     inStock: true,
+    category: "case"
   },
   {
     id: "17",
@@ -137,6 +153,7 @@ export const featuredProducts: Product[] = [
     image: "/products/27inch-144hz.jpg",
     slug: "27-inch-144hz-gaming-monitor",
     inStock: true,
+    category: "monitor"
   },
   {
     id: "18",
@@ -145,6 +162,8 @@ export const featuredProducts: Product[] = [
     image: "/products/34inch-ultrawide.jpg",
     slug: "34-inch-ultrawide-monitor",
     inStock: true,
+    category: "monitor"
+
   },
   {
     id: "19",
@@ -153,6 +172,7 @@ export const featuredProducts: Product[] = [
     image: "/products/prebuilt-rtx4070.jpg",
     slug: "prebuilt-gaming-pc-rtx-4070",
     inStock: true,
+    category: "prebuilt"
   },
   {
     id: "20",
@@ -161,5 +181,6 @@ export const featuredProducts: Product[] = [
     image: "/products/prebuilt-workstation.jpg",
     slug: "prebuilt-workstation-pc",
     inStock: false,
+    category: "prebuilt"
   },
 ]
