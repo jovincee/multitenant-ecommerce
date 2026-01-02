@@ -17,5 +17,5 @@ export interface Product {
     image: string
     slug: string
     inStock: boolean
-    category: ProductCategory
+    category: "cpu" | "gpu" | "motherboard" | "ram" | "storage" | "monitor" | "prebuilt" | "psu" | "case"
 }

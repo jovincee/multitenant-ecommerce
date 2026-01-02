@@ -1,12 +1,8 @@
-import { featuredProducts } from "@/data/products";
-import { Product } from "@/types/product";
+import { Product } from "@/types/product"
+import { featuredProducts } from "@/data/products"
 
-export function getProductsByCategory(
-  category?: string
-): Product[] {
-  if (!category) return featuredProducts;
-
+export function getProductsByCategory(category: string): Product[] {
   return featuredProducts.filter(
-    (product) => product.category === category
-  );
+    product => product.category === category
+  )
 }

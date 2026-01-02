@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useSearchParams } from "next/navigation"
 import "@/app/home.css"
 const categories = [
   { label: "All", value: "all" },
@@ -19,17 +20,28 @@ const categories = [
 
 
 export default function CategoriesNav() {
+    const searchParams = useSearchParams()
+    const activeCategory = searchParams.get("category") ?? "all"
     return(
         <nav aria-label="Product categories" className="categories">
             <ul className="category-list">
-                {categories.map((category)=>(
-                    <li className="category-button" key={category.value}>
-                        <Link href={`/?category=${category.value}`}>
-                            {category.label}
-                        </Link>   
+                {categories.map(category => {
+          const params = new URLSearchParams(searchParams.toString())
+          params.set("category", category.value)
 
-                    </li>
-                ))}
+          return (
+            <li
+              key={category.value}
+              className={`category-button ${
+                activeCategory === category.value ? "active" : ""
+              }`}
+            >
+              <Link href={`/?${params.toString()}`}>
+                {category.label}
+              </Link>
+            </li>
+            )
+            })}
             </ul>
 
 

@@ -10,18 +10,27 @@ import "./home.css"
 import { Product } from "@/types/product";
 
 export default async function Home({ searchParams }: {
-  searchParams: Promise<{ category?: string }>
+  searchParams: Promise<{ category?: string, q?: string }>
 
 }) {
-  let products;
-  const { category } = await searchParams;
-  if (category === "all"){
-    products = featuredProducts
-  }
-  else {
-    products = getProductsByCategory(category)
+  const { category = "all" , q = "" } = await searchParams;
+  let products: Product[] = featuredProducts
+  
+  // CATEGORY FILTER
+  if (category !== "all") {
+    products = products.filter(product => product.category === category)
   }
 
+
+  // 🔍 SEARCH FILTER
+  if (q) {
+    console.log("searched")
+    const query = q.toLowerCase()
+    products = products.filter(product =>
+      product.name.toLowerCase().includes(query)
+    )
+  }
+  
 
 
   return (
@@ -39,22 +48,7 @@ export default async function Home({ searchParams }: {
             Shop Now
           </Link>
         </section>
-
-        {/** Categories Navbar section */}
-        {/* Categories */}
-        {/* <nav className="categories" aria-label="Product categories">
-          <ul className="category-list">
-          {categories.map(category => (
-            <li className="category-button"key={category.id}>
-              <Link href={category.link}>
-                {category.name}
-              </Link>
-            </li>
-          ))
-
-          }
-          </ul>
-        </nav> */}
+        
         <CategoriesNav/>
 
         
