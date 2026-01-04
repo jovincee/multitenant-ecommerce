@@ -1,0 +1,162 @@
+/* Root overlay */
+.modal-root {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* backdrop */
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+/* Container */
+.modal-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+
+/* Animate the inner surface, NOT the container */
+.modal-surface {
+  background: white;
+  border-radius: 16px;
+  max-width: 720px;   /* 👈 increase this */
+  min-width: 480px;   /* optional */
+  width: 100%;
+  padding: 24px;
+
+  animation: modal-pop 0.25s ease-out;
+}
+
+@keyframes modal-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Header */
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Close button */
+.modal-close {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+}
+
+.modal-close:hover {
+  background: #f2f2f2;
+}
+
+/* Image */
+.modal-image {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: 0;
+}
+
+.image-cover {
+  object-fit: cover;
+}
+
+/* Content */
+.modal-content {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Meta */
+.modal-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.modal-stock {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.in-stock {
+  color: #1a7f37;
+}
+
+.out-of-stock {
+  color: #c62828;
+}
+
+
+.primary-btn {
+  flex: 1;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  opacity: 0.9;
+}
+
+/* Animation */
+@keyframes modal-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .modal-container {
+    border-radius: 12px;
+  }
+
+  .modal-image {
+    height: 180px;
+  }
+}

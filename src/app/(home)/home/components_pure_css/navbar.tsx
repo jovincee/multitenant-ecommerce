@@ -13,7 +13,7 @@ export default function Navbar () {
 
     const [query, setQuery] = useState(initialQuery)
 
-    //update URL as user types (debounces)
+    //update URL as user types (debounces); client-side
     useEffect(() => {
     // 🚫 Do nothing if query already matches URL
     if (query === initialQuery) return
